@@ -138,8 +138,10 @@ function clearCanvas() {
 function startDrawing(e) {
     isDrawing = true;
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     ctx.beginPath();
     ctx.moveTo(x, y);
 }
@@ -148,8 +150,10 @@ function draw(e) {
     if (!isDrawing) return;
     
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     
     ctx.strokeStyle = currentColor;
     ctx.lineWidth = brushSize;
