@@ -98,7 +98,11 @@ function nextWord() {
     if (wordList && wordList.length > 0) {
         const randomIndex = Math.floor(Math.random() * wordList.length);
         currentWord = wordList[randomIndex];
-        document.getElementById('current-word').textContent = currentWord;
+        const wordElement = document.getElementById('current-word');
+        wordElement.textContent = currentWord;
+        // Reset word visibility to visible state
+        wordElement.style.filter = 'none';
+        wordElement.style.userSelect = 'auto';
         wordVisible = true;
     }
 }
@@ -125,6 +129,7 @@ function backToMenu() {
 
 // Clear canvas
 function clearCanvas() {
+    if (!ctx || !canvas) return;
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
