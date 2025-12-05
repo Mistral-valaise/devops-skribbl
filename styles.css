@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.screen {
+    display: none;
+    padding: 30px;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Menu Screen */
+.menu-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.menu-content h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-easy {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-medium {
+    background: #FF9800;
+    color: white;
+}
+
+.btn-hard {
+    background: #F44336;
+    color: white;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.info-box {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.info-box h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.info-box ul {
+    list-style-position: inside;
+    color: #555;
+    line-height: 2;
+}
+
+/* Game Screen */
+.game-header {
+    margin-bottom: 20px;
+}
+
+.word-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#current-word {
+    color: #333;
+    font-size: 2em;
+    text-align: center;
+}
+
+.badge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: white;
+}
+
+.badge.easy {
+    background: #4CAF50;
+}
+
+.badge.medium {
+    background: #FF9800;
+}
+
+.badge.hard {
+    background: #F44336;
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.canvas-container {
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#drawing-canvas {
+    display: block;
+    cursor: crosshair;
+    background: white;
+    max-width: 100%;
+    height: auto;
+}
+
+.drawing-tools {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.color-palette {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.active {
+    border-color: #667eea;
+    border-width: 3px;
+    transform: scale(1.15);
+}
+
+.tool-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tool-controls label {
+    color: #555;
+    font-weight: bold;
+}
+
+#brush-size {
+    width: 150px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .difficulty-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    #current-word {
+        font-size: 1.5em;
+    }
+
+    #drawing-canvas {
+        width: 100%;
+    }
+}
