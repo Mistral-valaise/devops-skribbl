@@ -1,0 +1,20 @@
+image:
+  repository: devops-skribbl
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 3000
+
+route:
+  enabled: true
+  host: skribbl.apps.example.com
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
