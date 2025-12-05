@@ -1,0 +1,35 @@
+replicaCount: 1
+
+image:
+  repository: devops-skribbl
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+database:
+  enabled: true
+  user: postgres
+  password: password
+  dbName: devops_skribbl
+  storageSize: 1Gi
